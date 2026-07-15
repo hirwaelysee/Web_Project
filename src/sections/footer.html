@@ -1,4 +1,69 @@
-<div>
-    <h1>Footer</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.</p>
+<div id="footer-component" class="bg-[#efecea]">
+    <!-- Image part for both 3 devices -->
+    <div class="flex flex-col items-center items-center pt-48 md:flex md:flex-col md:items-center md:pt-60 lg:pt-20 lg:pb-10">
+        <img
+            src="./src/assets/footer-vector.png"
+            alt="footer-vector-image"
+            class="w-80 lg:w-1/2 md:w-96"
+        >
+    </div>
+
+    <!-- part for the mobile screens only -->
+    <div class="md:hidden px-5 mt-20 flex flex-col gap-y-8 font-outfit font-medium">
+        <div >
+            <p>Agent Baumeister</p>
+            <p>Böckhstraße 13</p>
+            <p>10967 Berlin</p>
+        </div>
+        <div>
+            <p class="underline">hallo@ogentur-baumeister.com</p>
+            <p class="md:text-right">+49 (0)30-490 827 87</p>
+        </div>
+    </div>
+
+    <!-- Footer Contacts and other details for ipads -->
+    <div class="hidden lg:hidden md:block md:flex md:justify-between md:px-10 md:mt-20 md:font-outfit md:text-lg text-[0.5em] md:font-medium">
+        <!-- Agentur part -->
+        <div>
+            <p>Agent Baumeister</p>
+            <p>Böckhstraße 13</p>
+            <p>10967 Berlin</p>
+        </div>
+        <!-- hallo email -->
+        <div>
+            <p class="underline">hallo@ogentur-baumeister.com</p>
+            <p class="md:text-right">+49 (0)30-490 827 87</p>
+        </div>
+    </div>
+    <!-- for ipads only-->
+    <div class="lg:hidden px-5 pt-10 pb-6 flex justify-between font-outfit font-medium md:flex md:justify-between md:pt-1 md:pb-5 md:px-10 md:font-medium md:mt-3">
+        <p>Datenschutz</p>
+        <p>Impressum</p>
+        <p>LinkedIn</p>
+        <p>Instagram</p>
+    </div>
+
+    <!-- PCS second part of footer section -->
+    <div class="hidden lg:flex lg:justify-between lg:mt-20 lg:px-6 lg:font-outfit lg:font-medium lg:text-xl lg:pb-4">
+        <div class="inline-block">
+            <p>Agent Baumeister</p>
+            <p>Böckhstraße 13</p>
+            <p>10967 Berlin</p>
+        </div>
+        <div class="inline-block ">
+            <p>hallo@ogentur-baumeister.com</p>
+            <p>+49 (0)30-490 827 87</p>
+        </div>
+        <div class="inline-block">
+            <p>LinkedIn</p>
+        </div>
+        <div class="inline-block">
+            <p>Instagram</p>
+        </div>
+        <div class="inline-block">
+            <p>Impressum</p>
+            <p>Datenschutz</p>
+        </div>
+    </div>
+
 </div>
