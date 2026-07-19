@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Communications Agency</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    /* =========================================
+       GLOBAL STYLES
+    ========================================= */
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      background-color: #f0ebe3;
+      color: #111111;
+      overflow-x: hidden;
+    }
+
+
+    /* =========================================
+       MAIN HOMEPAGE SECTION
+    ========================================= */
+
+    .agency-section {
+      width: 100%;
+      min-height: 100vh;
+
+      background-color: #f0ebe3;
+
+      padding: 80px 7vw 100px;
+    }
+
+
+    .agency-container {
+      width: 100%;
+      max-width: 1400px;
+
+      margin: 0 auto;
+    }
+
+
+    /* =========================================
+       INTRODUCTION
+    ========================================= */
+
+    .intro {
+      max-width: 800px;
+    }
+
+
+    .intro-text {
+      font-size: 1.8rem;
+
+      line-height: 1.5;
+
+      font-weight: 400;
+
+      letter-spacing: -0.02em;
+    }
+
+
+    /* =========================================
+       YELLOW DECORATIVE SHAPE
+    ========================================= */
+
+    .yellow-shape-wrapper {
+      width: 120px;
+      height: 100px;
+
+      margin: 55px auto 80px;
+    }
+
+
+    .yellow-shape {
+      width: 100%;
+      height: 100%;
+
+      background-color: #f5e400;
+
+      /*
+        Irregular hand-cut polygon
+      */
+
+      clip-path: polygon(
+        7% 28%,
+        55% 12%,
+        84% 17%,
+        100% 52%,
+        77% 92%,
+        28% 87%,
+        4% 61%
+      );
+    }
+
+
+    /* =========================================
+       SERVICES + GREEN POLYGON
+    ========================================= */
+
+    .services-layout {
+
+      display: grid;
+
+      /*
+        LEFT:
+        Services list
+
+        RIGHT:
+        Green polygon
+      */
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        400px;
+
+      gap: 80px;
+
+      align-items: center;
+
+      width: 100%;
+
+      max-width: 1000px;
+    }
+
+
+    /* =========================================
+       SERVICES LIST
+    ========================================= */
+
+    .services-list {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 40px;
+
+      min-width: 0;
+    }
+
+
+    .service-item {
+
+      max-width: 500px;
+
+      font-size: 1.6rem;
+
+      line-height: 1.3;
+
+      font-weight: 600;
+
+      letter-spacing: -0.02em;
+    }
+
+
+    /* =========================================
+       GREEN POLYGON WRAPPER
+    ========================================= */
+
+    .green-shape-wrapper {
+
+      width: 400px;
+
+      height: 460px;
+
+      /*
+        Keep polygon on the right
+      */
+
+      justify-self: end;
+    }
+
+
+    /* =========================================
+       GREEN POLYGON
+    ========================================= */
+
+    .green-shape {
+
+      position: relative;
+
+      width: 100%;
+
+      height: 100%;
+
+      background-color: #0b6b2e;
+
+      /*
+        Irregular angular polygon
+      */
+
+      clip-path: polygon(
+        14% 5%,
+        64% 0%,
+        100% 15%,
+        100% 68%,
+        76% 87%,
+        48% 100%,
+        7% 96%,
+        0% 30%
+      );
+    }
+
+
+    /* =========================================
+       TEXT INSIDE GREEN POLYGON
+    ========================================= */
+
+    .green-text {
+
+      position: absolute;
+
+      top: 105px;
+
+      left: 18%;
+
+      width: 62%;
+
+      margin: 0;
+
+      color: #f0ebe3;
+
+      font-size: 0.75rem;
+
+      line-height: 1.5;
+
+      font-weight: 400;
+    }
+
+
+    /* =========================================
+       CLIENT FOOTER BAND
+    ========================================= */
+
+    .client-band {
+
+      width: 100%;
+
+      background-color: #f5e400;
+
+      padding: 70px 7vw 80px;
+    }
+
+
+    .client-list {
+
+      width: 100%;
+
+      max-width: 1400px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: flex-end;
+
+      list-style: none;
+
+      text-align: right;
+    }
+
+
+    .client-list li {
+
+      font-size: 1.5rem;
+
+      line-height: 1.9;
+
+      font-weight: 600;
+    }
+
+
+    /* =========================================
+       TABLET
+       iPad / SMALL LAPTOP
+    ========================================= */
+
+    @media (max-width: 1100px) {
+
+      .agency-section {
+        padding: 70px 6vw 90px;
+      }
+
+
+      .services-layout {
+
+        grid-template-columns:
+          minmax(0, 1fr)
+          340px;
+
+        gap: 50px;
+      }
+
+
+      .green-shape-wrapper {
+
+        width: 340px;
+
+        height: 420px;
+      }
+
+
+      .service-item {
+
+        font-size: 1.35rem;
+      }
+
+
+      .green-text {
+
+        top: 90px;
+
+        font-size: 0.7rem;
+      }
+
+    }
+
+
+    /* =========================================
+       MOBILE
+       iPHONE 14 / iPHONE 15
+       
+       IMPORTANT:
+       The green polygon REMAINS ON THE RIGHT.
+    ========================================= */
+
+    @media (max-width: 700px) {
+
+      /* =====================================
+         MAIN SECTION
+      ===================================== */
+
+      .agency-section {
+
+        padding: 40px 16px 60px;
+      }
+
+
+      /* =====================================
+         INTRODUCTION
+      ===================================== */
+
+      .intro {
+
+        max-width: 100%;
+      }
+
+
+      .intro-text {
+
+        font-size: 1rem;
+
+        line-height: 1.5;
+
+        letter-spacing: -0.01em;
+      }
+
+
+      /* =====================================
+         YELLOW SHAPE
+      ===================================== */
+
+      .yellow-shape-wrapper {
+
+        width: 75px;
+
+        height: 65px;
+
+        margin: 35px auto 50px;
+      }
+
+
+      /* =====================================
+         SERVICES + GREEN POLYGON
+         
+         KEEP SIDE-BY-SIDE
+      ===================================== */
+
+      .services-layout {
+
+        display: grid;
+
+        /*
+          Left:
+          Services
+
+          Right:
+          Green polygon
+        */
+
+        grid-template-columns:
+          minmax(0, 1fr)
+          145px;
+
+        gap: 12px;
+
+        align-items: center;
+
+        width: 100%;
+
+        max-width: 100%;
+      }
+
+
+      /* =====================================
+         SERVICES LIST
+      ===================================== */
+
+      .services-list {
+
+        width: 100%;
+
+        min-width: 0;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 22px;
+      }
+
+
+      .service-item {
+
+        max-width: 100%;
+
+        font-size: 0.82rem;
+
+        line-height: 1.3;
+
+        font-weight: 600;
+
+        letter-spacing: -0.02em;
+      }
+
+
+      /* =====================================
+         GREEN POLYGON
+      ===================================== */
+
+      .green-shape-wrapper {
+
+        width: 145px;
+
+        height: 260px;
+
+        justify-self: end;
+
+        flex-shrink: 0;
+      }
+
+
+      .green-shape {
+
+        width: 100%;
+
+        height: 100%;
+
+        clip-path: polygon(
+          14% 5%,
+          64% 0%,
+          100% 15%,
+          100% 68%,
+          76% 87%,
+          48% 100%,
+          7% 96%,
+          0% 30%
+        );
+      }
+
+
+      /* =====================================
+         GREEN POLYGON TEXT
+      ===================================== */
+
+      .green-text {
+
+        position: absolute;
+
+        top: 58px;
+
+        left: 18%;
+
+        width: 64%;
+
+        margin: 0;
+
+        color: #f0ebe3;
+
+        font-size: 0.42rem;
+
+        line-height: 1.45;
+
+        font-weight: 400;
+      }
+
+
+      /* =====================================
+         CLIENT FOOTER
+      ===================================== */
+
+      .client-band {
+
+        padding: 45px 20px 55px;
+      }
+
+
+      .client-list {
+
+        width: 100%;
+
+        align-items: flex-end;
+
+        text-align: right;
+      }
+
+
+      .client-list li {
+
+        font-size: 0.9rem;
+
+        line-height: 1.9;
+
+        font-weight: 600;
+      }
+
+    }
+
+
+    /* =========================================
+       VERY SMALL PHONES
+       iPHONE SE / SMALL DEVICES
+    ========================================= */
+
+    @media (max-width: 380px) {
+
+      .agency-section {
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+      }
+
+
+      /* INTRO */
+
+      .intro-text {
+
+        font-size: 0.9rem;
+      }
+
+
+      /* =====================================
+         SERVICES + GREEN POLYGON
+      ===================================== */
+
+      .services-layout {
+
+        grid-template-columns:
+          minmax(0, 1fr)
+          125px;
+
+        gap: 8px;
+      }
+
+
+      /* SERVICES */
+
+      .services-list {
+
+        gap: 20px;
+      }
+
+
+      .service-item {
+
+        font-size: 0.72rem;
+
+        line-height: 1.3;
+      }
+
+
+      /* GREEN POLYGON */
+
+      .green-shape-wrapper {
+
+        width: 125px;
+
+        height: 240px;
+      }
+
+
+      /* GREEN TEXT */
+
+      .green-text {
+
+        top: 53px;
+
+        left: 18%;
+
+        width: 64%;
+
+        font-size: 0.37rem;
+
+        line-height: 1.4;
+      }
+
+
+      /* CLIENTS */
+
+      .client-list li {
+
+        font-size: 0.8rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================================
+       MAIN HOMEPAGE
+  ========================================== -->
+
+  <main class="agency-section">
+
+
+    <div class="agency-container">
+
+
+      <!-- =====================================
+           INTRODUCTION
+      ====================================== -->
+
+      <section class="intro">
+
+        <p class="intro-text">
+
+          We are a Berlin-based communications agency
+          specialising in helping companies and brands
+          find their voice and position themselves.
+          Whether it's brand building, identity sharpening,
+          or communication strategy, we bring a fresh
+          perspective to established structures, develop
+          tailor-made communication solutions, and ensure
+          that messages resonate. With over a decade of
+          experience, we have honed our skills in giving
+          brands their unmistakable identity and making
+          them visible in the long term.
+
+        </p>
+
+      </section>
+
+
+      <!-- =====================================
+           YELLOW DECORATIVE POLYGON
+      ====================================== -->
+
+      <div
+        class="yellow-shape-wrapper"
+        aria-hidden="true"
+      >
+
+        <div class="yellow-shape"></div>
+
+      </div>
+
+
+      <!-- =====================================
+           SERVICES + GREEN POLYGON
+           
+           DESKTOP:
+           Services LEFT
+           Green polygon RIGHT
+           
+           MOBILE:
+           Services LEFT
+           Green polygon RIGHT
+      ====================================== -->
+
+      <section class="services-layout">
+
+
+        <!-- ===================================
+             SERVICES LIST
+        ==================================== -->
+
+        <div class="services-list">
+
+
+          <h2 class="service-item">
+
+            Brand strategy
+
+          </h2>
+
+
+          <h2 class="service-item">
+
+            Corporate Identity &amp;<br>
+            Website development
+
+          </h2>
+
+
+          <h2 class="service-item">
+
+            SEO &amp; copywriting
+
+          </h2>
+
+
+          <h2 class="service-item">
+
+            Media Relations
+
+          </h2>
+
+
+          <h2 class="service-item">
+
+            Digital marketing &amp;<br>
+            content production
+
+          </h2>
+
+
+          <h2 class="service-item">
+
+            Influencer relations
+
+          </h2>
+
+
+        </div>
+
+
+        <!-- ===================================
+             GREEN POLYGON
+        ==================================== -->
+
+        <div class="green-shape-wrapper">
+
+
+          <div class="green-shape">
+
+
+            <!-- TEXT INSIDE GREEN POLYGON -->
+
+            <p class="green-text">
+
+              Our strategic approach is a
+              collaborative journey that starts
+              with analysing the initial situation
+              and leads to messages that cut
+              through the information overload.
+              We take care of content production
+              and maintain relationships with
+              multipliers to position your brand
+              in the best possible way. From
+              analysis to implementation, we
+              accompany you every step of the
+              way, ensuring that every measure
+              is effective.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+      </section>
+
+
+    </div>
+
+
+  </main>
+
+
+  <!-- =========================================
+       CLIENT FOOTER BAND
+  ========================================== -->
+
+  <footer class="client-band">
+
+
+    <ul class="client-list">
+
+
+      <li>Adidas</li>
+
+      <li>BMW</li>
+
+      <li>Mercedes-Benz</li>
+
+      <li>Porsche</li>
+
+      <li>Siemens</li>
+
+      <li>Bosch</li>
+
+      <li>Deutsche Telekom</li>
+
+      <li>Volkswagen</li>
+
+      <li>Nivea</li>
+
+      <li>Beiersdorf</li>
+
+      <li>Allianz</li>
+
+      <li>Hugo Boss</li>
+
+      <li>Red Bull</li>
+
+      <li>Spotify</li>
+
+      <li>Google</li>
+
+      <li>Apple</li>
+
+      <li>Microsoft</li>
+
+      <li>Samsung</li>
+
+      <li>Amazon</li>
+
+      <li>Netflix</li>
+
+      <li>Airbnb</li>
+
+      <li>LinkedIn</li>
+
+      <li>Meta</li>
+
+      <li>Adobe</li>
+
+      <li>Canva</li>
+
+      <li>HubSpot</li>
+
+      <li>Notion</li>
+
+      <li>Slack</li>
+
+
+    </ul>
+
+
+  </footer>
+
+
+</body>
+
+</html>
