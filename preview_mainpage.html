@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Preview - Main Homepage</title>
+    <link rel="stylesheet" href="./dist/output.css">
+  </head>
+  <body>
+    <div id="preview"></div>
+    <script>
+      fetch('./src/sections/mainhomepage.html')
+        .then(r => r.text())
+        .then(html => document.getElementById('preview').innerHTML = html)
+        .catch(err => document.getElementById('preview').innerText = 'Failed to load: ' + err);
+    </script>
+  </body>
+</html>
