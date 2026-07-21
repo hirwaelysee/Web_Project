@@ -7,19 +7,24 @@
     <title>Website project template</title>
 </head>
 <script>
-    const loadComponents = (id, url, textColor = '') =>  {
-        fetch(url)
+    const loadComponents = (id, url, textColor = '') => {
+
+    return fetch(url)
         .then((response) => response.text())
         .then((html) => {
+
             const container = document.getElementById(id);
+
             if (!container) {
                 return;
             }
 
             container.innerHTML = html;
             container.style.color = textColor;
+
         });
-    }
+
+}
 
     const isHomePage = () => {
         const page = window.location.pathname.split('/').pop()?.toLowerCase();
@@ -27,13 +32,28 @@
     }
 
     window.onload = () => {
-        loadComponents('header', './src/sections/header.html');
-        loadComponents('hero', './src/sections/hero.html');
-        loadComponents('contact', './src/sections/contact.html');
-        loadComponents('footer', './src/sections/footer.html', isHomePage() ? '' : '#1d5d3f');
-    }
+
+        Promise.all([
+            loadComponents('header', './src/sections/header.html'),
+            loadComponents('hero', './src/sections/hero.html'),
+            loadComponents('contact', './src/sections/contact.html'),
+            loadComponents('footer', './src/sections/footer.html', isHomePage() ? '' : '#1d5d3f')
+        ])
+        .then(() => {
+
+            initHeader();
+
+        });
+
+}
 </script>
 <body>
+    <div id="header"></div>
+    <div id="hero"></div>
+    <!-- <div id="contact"></div> -->
     <div id="footer"></div>
+
+    <script src="./src/js/header.js"></script>
+    <script src="./src/js/main.js"></script>
 </body>
 </html>
