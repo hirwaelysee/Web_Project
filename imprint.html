@@ -12,9 +12,7 @@
         .then((response) => response.text())
         .then((html) => {
             const container = document.getElementById(id);
-            if (!container) {
-                return;
-            }
+            if (!container) return;
 
             container.innerHTML = html;
             container.style.color = textColor;
@@ -33,7 +31,39 @@
         loadComponents('footer', './src/sections/footer.html', isHomePage() ? '' : '#1d5d3f');
     }
 </script>
-<body>
+<body class="bg-[#F3EFEA]">
+  
+    <!-- Header Container -->
+    <header class="flex flex-row justify-between items-center md:items-start px-5 md:px-7 pt-5">
+        
+        <!-- Left: Language selector -->
+        <div class="flex flex-col font-semibold text-[#0E5A37] text-sm md:text-base">
+            <span>DE</span>
+            <span>EN</span>
+        </div>
+        
+        <!-- Center: Title -->
+        <h1 class="text-[#0E5A37] text-2xl md:text-3xl font-bold md:mt-6">
+            Baumeister
+        </h1>
+
+        <!-- Right Desktop: Full Navigation -->
+        <nav class="hidden md:flex flex-col text-right text-[#0E5A37] font-semibold">
+            <a href="#" class="block hover:underline">About</a>
+            <a href="#" class="block hover:underline">Services</a>
+            <a href="#" class="block hover:underline">References</a>
+            <a href="#" class="block hover:underline">Contact</a>
+        </nav>
+
+        <!-- Right Mobile: Hamburger Button Image -->
+        <div class="flex md:hidden items-center">
+            <button aria-label="Open Menu">
+                <img src="./src/assets/Home-imprintvector.png" alt="Menu" class="h-8 w-auto cursor-pointer" />
+            </button>
+        </div>
+
+    </header>
+    
     <div id="footer"></div>
 </body>
 </html>
