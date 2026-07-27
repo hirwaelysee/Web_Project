@@ -7,17 +7,15 @@
     <title>Website project template</title>
 </head>
 <body>
-    <div id="header"></div>
-    <div id="hero"></div>
-    <div id="main"></div>
-    <div id="footer"></div>
-
+    
     <script>
         const loadComponents = (id, url, textColor = '') =>  {
-            fetch(url)
+            return fetch(url)
             .then((response) => response.text())
             .then((html) => {
+
                 const container = document.getElementById(id);
+
                 if (!container) {
                     return;
                 }
@@ -33,11 +31,23 @@
         }
 
         window.onload = () => {
-            loadComponents('header', './src/sections/header.html');
-            loadComponents('hero', './src/sections/hero.html');
-            loadComponents('main', './src/sections/mainhomepage.html');
-            loadComponents('footer', './src/sections/footer.html', isHomePage() ? '' : '#1d5d3f');
+            Promise.all([
+                loadComponents('header', './src/sections/header.html'),
+                loadComponents('hero', './src/sections/hero.html'),
+                loadComponents('main', './src/sections/mainhomepage.html'),
+                loadComponents('footer', './src/sections/footer.html', isHomePage() ? '' : '#1d5d3f')
+            ]).then(() => {
+
+                 initHeadear();
+
+            });
         }
     </script>
+
+    <div id="header"></div>
+    <div id="hero"></div>
+    <div id="main"></div>
+    <div id="footer"></div>
+
 </body>
 </html>
