@@ -20,7 +20,7 @@
 >
   <div class="mx-auto w-full max-w-[1400px]">
 
-    <section class="max-w-[800px]">
+    <section class="mx-auto max-w-[800px] text-left">
       <p
         class="
           text-[1.8rem]
@@ -66,14 +66,11 @@
       "
       aria-hidden="true"
     >
-      <div
-        class="
-          h-full
-          w-full
-          bg-[#f5e400]
-          [clip-path:polygon(7%_28%,55%_12%,84%_17%,100%_52%,77%_92%,28%_87%,4%_61%)]
-        "
-      ></div>
+      <img
+        src="./src/sections/Vector 6.png"
+        alt=""
+        class="h-full w-full object-fill"
+      >
     </div>
 
     <section
@@ -101,7 +98,9 @@
           flex
           min-w-0
           flex-col
+          items-center
           gap-12
+          text-center
 
           max-[700px]:gap-[26px]
 
@@ -256,15 +255,13 @@
         "
       >
 
-        <div
-          class="
-            relative
-            h-full
-            w-full
-            bg-[#0b6b2e]
-            [clip-path:polygon(14%_5%,64%_0%,100%_15%,100%_68%,76%_87%,48%_100%,7%_96%,0%_30%)]
-          "
-        >
+        <div class="relative h-full w-full">
+          <img
+            src="./src/sections/green-shape.png"
+            alt=""
+            class="absolute inset-0 h-full w-full object-fill"
+            aria-hidden="true"
+          >
 
           <p
             class="
@@ -305,7 +302,6 @@
             way, ensuring that every measure
             is effective.
           </p>
-
         </div>
 
       </div>
@@ -315,10 +311,12 @@
   </div>
 </main>
 
+
 <footer
   class="
+    relative
     w-full
-    bg-[#f5e400]
+    overflow-hidden
     px-14
     pt-[140px]
     pb-24
@@ -332,15 +330,24 @@
     max-[700px]:pb-16
   "
 >
+  <img
+    src="./src/sections/yellow-bg.png"
+    alt=""
+    class="absolute inset-0 z-0 h-full w-full object-cover object-top"
+    aria-hidden="true"
+  >
+
   <ul
     class="
+      relative
+      z-10
       mx-auto
       flex
       w-full
       max-w-[1400px]
       list-none
       flex-col
-      items-end
+      items-right
       text-right
     "
   >
