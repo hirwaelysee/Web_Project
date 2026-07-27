@@ -18,3 +18,5 @@ fetch("./sections/hero.html")
     initHeader();
 
 });
+
+fetch("./sections/")

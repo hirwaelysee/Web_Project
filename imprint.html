@@ -8,16 +8,20 @@
 </head>
 <script>
     const loadComponents = (id, url, textColor = '') =>  {
-        fetch(url)
+        
+    return fetch(url)
         .then((response) => response.text())
         .then((html) => {
+
             const container = document.getElementById(id);
+
             if (!container) {
                 return;
             }
 
             container.innerHTML = html;
             container.style.color = textColor;
+
         });
     }
 
@@ -27,13 +31,28 @@
     }
 
     window.onload = () => {
-        loadComponents('header', './src/sections/header.html');
-        loadComponents('main','./src/sections/main-imprint.html');
-        loadComponents('footer', './src/sections/footer.html', isHomePage() ? '' : '#1d5d3f');
+        Promise.all([
+            loadComponents('header', './src/sections/header.html', isHomePage() ? '' : '#1d5d3f'),
+            loadComponents('hero', './src/sections/hero.html'),
+            loadComponents('main', './src/sections/main-imprint.html'),
+            loadComponents('contact', './src/sections/contact.html'),
+            loadComponents('footer', './src/sections/footer.html', isHomePage() ? '' : '#1d5d3f')
+        ])
+        .then(()=>{
+            
+            initHeader();
+
+        })
+        
     }
 </script>
 <body>
+    
+    <div id="header"></div>
     <div id="main"></div>
     <div id="footer"></div>
+
+    <script src="./src/js/header.js"></script>
+    <script src="./src/js/main.js"></script>
 </body>
 </html>
