@@ -2,19 +2,19 @@ function initHeader() {
     const image = document.getElementById("menu-icon");
     const menu = document.getElementById("mobile-menu");
     const text = document.getElementById("hero-text");
-    const page = window.location.pathname.split('/').pop().toLowerCase();
+    const page = window.location.pathname.split('/').pop().toLowerCase() || '';
     const header = document.getElementById("main-header");
 
     console.log(page)
     if (!image || !menu) return;
 
     switch(page){
+        case "home.html":
         case "index.html":
+        case "":
             image.src = './src/assets/small-icon.png';
             break
         case "privacy_policy.html":
-            image.src = './src/assets/green-small.png';
-            break
         case "imprint.html":
             image.src= './src/assets/green-small.png'
             break

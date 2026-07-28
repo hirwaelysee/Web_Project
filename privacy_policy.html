@@ -27,7 +27,7 @@
 
     const isHomePage = () => {
         const page = window.location.pathname.split('/').pop()?.toLowerCase();
-        return page === '' || page === 'index.html' || page === 'home.html';
+        return page === '' || page === 'index.html';
     }
 
     window.onload = () => {
