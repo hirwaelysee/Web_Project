@@ -3,12 +3,13 @@ function initHeader() {
     const menu = document.getElementById("mobile-menu");
     const text = document.getElementById("hero-text");
     const page = window.location.pathname.split('/').pop().toLowerCase();
+    const header = document.getElementById("main-header");
 
     console.log(page)
     if (!image || !menu) return;
 
     switch(page){
-        case "home.html":
+        case "index.html":
             image.src = './src/assets/small-icon.png';
             break
         case "privacy_policy.html":
@@ -27,7 +28,7 @@ function initHeader() {
         // Change the image
         if (menu.classList.contains("hidden")) {
             switch(page){
-                case "home.html":
+                case "index.html":
                     image.src = "./src/assets/small-icon.png";
                     header.classList.remove("mb-[120px]");
                     text.classList.remove('hidden')
@@ -53,4 +54,18 @@ function initHeader() {
         }
 
     });
+    menu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.add("hidden");
+        image.src = "./src/assets/small-icon.png";
+
+        if (header) {
+            header.classList.remove("mb-[120px]");
+        }
+
+        if (text) {
+            text.classList.remove("hidden");
+        }
+    });
+});
 }
