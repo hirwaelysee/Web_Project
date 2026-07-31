@@ -1,6 +1,6 @@
-<div id="footer-component">
+<div id="footer-component" class="bg-[#efecea]">
     <!-- Image part for both 3 devices -->
-    <div class="flex flex-col items-center items-center pt-48 md:flex md:flex-col md:items-center md:pt-60 lg:pt-20 lg:pb-10">
+    <div class="flex flex-col items-center pt-48 md:flex md:flex-col md:items-center md:pt-60 lg:pt-20 lg:pb-10">
         <img
             src="./src/assets/footer-vector.png"
             alt="footer-vector-image"
@@ -22,7 +22,7 @@
     </div>
 
     <!-- Footer Contacts and other details for ipads -->
-    <div class="hidden lg:hidden md:block md:flex md:justify-between md:px-10 md:mt-20 md:font-outfit md:text-lg text-[0.5em] md:font-medium">
+    <div class="hidden lg:hidden md:flex md:justify-between md:px-10 md:mt-20 md:font-outfit md:text-lg text-[0.5em] md:font-medium">
         <!-- Agentur part -->
         <div>
             <p>Agent Baumeister</p>
@@ -37,8 +37,12 @@
     </div>
     <!-- for ipads only-->
     <div class="lg:hidden px-5 pt-10 pb-6 flex justify-between font-outfit font-medium md:flex md:justify-between md:pt-1 md:pb-5 md:px-10 md:font-medium md:mt-3">
-        <p>Datenschutz</p>
-        <p>Impressum</p>
+        <a href="/privacy_policy.html">
+                <p>Datenschutz</p>
+        </a>
+        <a href="/imprint.html">
+                <p>Impressum</p>
+        </a>
         <p>LinkedIn</p>
         <p>Instagram</p>
     </div>
@@ -61,8 +65,12 @@
             <p>Instagram</p>
         </div>
         <div class="inline-block">
-            <p>Impressum</p>
-            <p>Datenschutz</p>
+            <a href="/imprint.html">
+                <p>Impressum</p>
+            </a>
+            <a href="/privacy_policy.html">
+                <p>Datenschutz</p>
+            </a>
         </div>
     </div>
 

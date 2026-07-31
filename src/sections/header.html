@@ -1,46 +1,49 @@
 <!-- navbar part -->
-<div class="relative w-full md:pb-40" id="main-header">
-    <!-- DE EN both pc, iphone and ipad-->
-    <div class="fixed top-0 left-0 z-50 px-4 pt-7  font-outfit md:text-2xl text-base lg:text-2xl">
-        <p>DE</p>
-        <p>EN</p>
-    </div>
+<div class="bg-[#efecea]">
+    <div class="relative w-full md:pb-40" id="main-header">
+        <!-- DE EN both pc, iphone and ipad-->
+        <div class="fixed top-0 left-0 z-50 px-4 pt-9  font-outfit md:text-2xl text-sm lg:text-2xl">
+            <p>DE</p>
+            <p>EN</p>
+        </div>
 
-    <!-- Baumeister for both devices-->
-    <div class="fixed top-0 left-1/2 z-[90] -translate-x-1/2 px-4 pt-7">
-        <div class="relative inline-block md:block">
-            <!-- the image is only in iphones only -->
-            <!-- <img src="./src/assets/baumeistervector.png" alt="baumeistervector" class="block md:hidden"> -->
-            <h3 class="relative flex items-center justify-center font-semibold font-outfit text-3xl  md:font-semibold md:text-5xl z-[90]">Baumeister</h3>
+        <!-- Baumeister for both devices-->
+        <div class="fixed top-0 left-1/2 z-[90] -translate-x-1/2 px-4 pt-10 ">
+            <div class="relative inline-block md:block">
+                <!-- the image is only in iphones only -->
+                <img src="./src/assets/baumeistervector.png" alt="baumeistervector" class="block md:hidden inset-1 absolute scale-125">
+                <a href="/index.html">
+                    <h3 class="relative flex items-center justify-center font-bold font-outfit text-[1.5rem]  md:font-semibold md:text-5xl z-[90]">Baumeister</h3>
+                </a>
+            </div>
+        </div>
+
+        <!-- About Services References Contact for Macbook Pro only -->
+        <div class="hidden lg:block fixed top-0 right-0 z-50 px-4 pt-7 text-right font-outfit text-2xl">
+            <p class="no-underline"><a href="#about">About</a></p>
+            <p><a href="#service">Services</a></p>
+            <p><a href="#reference">References</a></p>
+            <p>Contact</p>
+        </div>
+
+        <!--Container for mobile devices and ipads only  -->
+        <div class="fixed md:top-4 top-3 right-0 z-50 px-4 pt-7 lg:hidden">
+            <img 
+                src="./src/assets/small-icon.png"
+                alt="small-icon"
+                class="w-10 h-23 md:w-16"
+                id="menu-icon"
+            >
         </div>
     </div>
-
-    <!-- About Services References Contact for Macbook Pro only -->
-    <div class="hidden lg:block fixed top-0 right-0 z-50 px-4 pt-7 text-right font-outfit text-2xl">
-        <p class="no-underline"><a href="#about">About</a></p>
-        <p><a href="#service">Services</a></p>
-        <p><a href="#reference">References</a></p>
-        <p>Contact</p>
-    </div>
-
-    <!--Container for mobile devices and ipads only  -->
-    <div class="fixed md:top-4 top-3 right-0 z-50 px-4 pt-7 lg:hidden">
-        <img 
-            src="./src/assets/small-icon.png"
-            alt="small-icon"
-            class="w-10 h-23 md:w-16"
-            id="menu-icon"
-        >
-    </div>
+    <!-- when the button is clicked  -->
+    <nav
+        id="mobile-menu"
+        class="hidden fixed top-24 left-0 w-full  z-40 text-center py-10 lg:hidden"
+    >
+        <a href="#about" class="block text-3xl font-semibold text-[#0E5A37] mb-8 md:mb-12">About</a>
+        <a href="#service" class="block text-3xl font-semibold text-[#0E5A37] mb-8 md:mb-12">Service</a>
+        <a href="#reference" class="block text-3xl font-semibold text-[#0E5A37] mb-8 md:mb-12">References</a>
+        <a href="#" class="block text-3xl font-semibold text-[#0E5A37]">Contact</a>
+    </nav>
 </div>
-<!-- when the button is clicked  -->
-<nav
-    id="mobile-menu"
-    class="hidden fixed top-24 left-0 w-full  z-40 text-center py-10 lg:hidden"
->
-    <a href="#about" class="block text-3xl font-semibold text-[#0E5A37] mb-8 md:mb-12">About</a>
-    <a href="#service" class="block text-3xl font-semibold text-[#0E5A37] mb-8 md:mb-12">Service</a>
-    <a href="#reference" class="block text-3xl font-semibold text-[#0E5A37] mb-8 md:mb-12">References</a>
-    <a href="#" class="block text-3xl font-semibold text-[#0E5A37]">Contact</a>
-</nav>
-<div class="h-24"></div>
