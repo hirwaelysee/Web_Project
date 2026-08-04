@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/output.css">
+    <title>Website project template</title>
+</head>
+<script>
+    const loadComponents = (id, url, textColor = '') =>  {
+
+    return fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+
+            const container = document.getElementById(id);
+
+            if (!container) {
+                return;
+            }
+
+            container.innerHTML = html;
+            container.style.color = textColor;
+
+        });
+}
+
+    const isHomePage = () => {
+        const page = window.location.pathname.split('/').pop()?.toLowerCase();
+        return page === '' || page === 'index.html';
+    }
+
+    window.onload = () => {
+
+        Promise.all([
+            loadComponents('header', './src/sections/header.html', isHomePage() ? '' : '#1d5d3f'),
+            loadComponents('main', './src/sections/mainprivacy_policy.html'),
+            loadComponents('contact', './src/sections/contact.html'),
+            loadComponents('footer', './src/sections/footer.html', isHomePage() ? '' : '#1d5d3f'),
+        ])
+        .then(()=>{
+            
+            initHeader();
+
+        })
+        
+    }
+</script>
+<body>
+    <div id="header"></div>
+    <div id="main"></div>
+    <div id="footer"></div>
+
+    <script src="./src/js/header.js"></script>
+    <script src="./src/js/main.js"></script>
+</body>
+</html>
